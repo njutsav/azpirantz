@@ -311,7 +311,6 @@ p {
 }
 
 a {
-  font-size: 16px;
   color: var(--dark-grey);
   font-size: 12px;
   font-weight: normal;
@@ -348,6 +347,7 @@ ul li {
     font-size: 14px;
   }
 }
+
 @media (min-width:992px) {
   ul li {
     font-size: 16px;
@@ -369,11 +369,15 @@ ul li::before {
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 0;
   text-transform: uppercase;
   background: var(--gradient-secondry);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width:768px) {
@@ -387,6 +391,11 @@ ul li::before {
   content: url('../image/icon/arrow-white.svg');
   vertical-align: middle;
   margin-left: 8px;
+  transition: transform 0.5s ease;
+}
+
+.button:hover::after {
+  transform: translateX(10px);
 }
 
 .button.bg-white::after {
@@ -396,8 +405,9 @@ ul li::before {
 }
 
 @media (max-width:768px) {
+
   .button::after,
-  .button.bg-white::after{
+  .button.bg-white::after {
     display: none;
   }
 }
@@ -695,6 +705,35 @@ a.site-logo {
   /* navbar css for mobile end */
 }
 
+/*========= dropdown menu start =======*/
+.dropdown {
+  position: relative;
+}
+
+.dropdown::after {
+  content: url('../image/icon/dropdown-arrow.svg');
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+  width: 200px;
+  padding: 16px;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/*========= dropdown menu end =========*/
+
 /* mobile breakpoint end */
 /*>>>>>>>>> navbar css end <<<<<<<<<*/
 
@@ -708,11 +747,13 @@ a.site-logo {
 .banner .container .row {
   height: auto;
 }
+
 @media (min-width:768px) {
   .banner .container .row {
     height: 350px;
   }
 }
+
 @media (min-width:992px) {
   .banner .container .row {
     height: 500px;
@@ -736,11 +777,12 @@ a.site-logo {
 /*>>>>>>>>> home page banner style end <<<<<<*/
 /*>>>>>>>>> highlights-sec start <<<<<<<<<*/
 @media (max-width:768px) {
-  .highlights-sec .item svg{
+  .highlights-sec .item svg {
     width: 18px;
     height: 18px;
   }
 }
+
 /*>>>>>>>>> highlights-sec end <<<<<<<<<*/
 /*>>>>>>>> service-sec start <<<<<<<<<*/
 
@@ -762,14 +804,14 @@ a.site-logo {
 }
 
 @media (min-width:768px) {
-  .vertical-tab-button{
+  .vertical-tab-button {
     font-size: 14px;
     padding: 16px 8px;
   }
 }
 
 @media (min-width:992px) {
-  .vertical-tab-button{
+  .vertical-tab-button {
     font-size: 16px;
     padding: 16px 16px;
   }
@@ -783,6 +825,7 @@ a.site-logo {
   font-weight: bold;
   position: relative;
 }
+
 .vertical-tab-button.active::after {
   content: '';
   width: 15px;
@@ -793,19 +836,23 @@ a.site-logo {
   transform: rotate(45deg);
   z-index: -1;
 }
-.vertical-tab-button img{
+
+.vertical-tab-button img {
   width: 36px;
   height: 36px;
 }
+
 @media (max-width:768px) {
   .vertical-tab-button.active {
     border-radius: 10px 10px 0 0;
     box-shadow: none;
   }
+
   .vertical-tab-button.active::after {
     display: none;
   }
-  .vertical-tab-button img{
+
+  .vertical-tab-button img {
     width: 16px;
     height: 16px;
   }
@@ -895,6 +942,12 @@ a.site-logo {
   background: var(--gradient-primary);
 }
 
+@media (max-width:768px) {
+  .cta-sec .col-12 {
+    background: radial-gradient(51.2% 49.89% at 51.2% 0%, var(--red) 0%, var(--dark) 100%);
+  }
+}
+
 /*>>>>>>> cta-sec end <<<<<<<<*/
 
 /*>>>>>>> testimonial sec start <<<<<<*/
@@ -936,3 +989,49 @@ footer .item ul li a {
 }
 
 /*>>>>>>> footer style end <<<<<<<<<*/
+
+/*>>>>>>>> form style start <<<<<<<<*/
+input,
+textarea {
+  border-radius: 5px;
+  border: 1px solid var(--border-grey);
+  background: var(--white);
+  color: var(--disable-grey);
+  font-family: var(--Nunito);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  text-transform: capitalize;
+}
+
+/*>>>>>>>> form style end <<<<<<<<<<<<*/
+
+/*>>>>>>>> approach-sec style start <<<<<<<<*/
+.service-banner {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 48px 0;
+}
+
+@media (max-width:768px) {
+  .service-banner {
+    padding: 36px 0;
+    background-image: none !important;
+  }
+}
+
+.approach-sec {
+  background-image: url('../image/service/approch-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*>>>>>>>> approch-sec style end <<<<<<<<*/

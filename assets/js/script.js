@@ -27,7 +27,7 @@ const swiper = new Swiper('.swiper-container', {
 
 var myGladiators = new Swiper(".myGladiators", {
   slidesPerView: 1,
-  spaceBetween: 24,
+  spaceBetween: 16,
   loop:false,
   pagination: {
     el: ".swiper-pagination",
@@ -46,6 +46,7 @@ var myGladiators = new Swiper(".myGladiators", {
     },
     992: {
       slidesPerView: 3,
+      spaceBetween: 24,
     }
   }
 });
