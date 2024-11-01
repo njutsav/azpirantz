@@ -251,11 +251,11 @@ h1 {
 
 @media (min-width:768px) {
   h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:992px) {
   h1 {
     font-size: 36px;
   }
@@ -369,7 +369,7 @@ ul li::before {
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
-  line-height: 0;
+  line-height: normal;
   text-transform: uppercase;
   background: var(--gradient-secondry);
   border: none;
@@ -384,6 +384,12 @@ ul li::before {
   .button {
     font-size: 14px;
     padding: 16px 24px;
+  }
+}
+@media (min-width:992px) {
+  .button {
+    font-size: 14px;
+    line-height: 0;
   }
 }
 
@@ -710,8 +716,9 @@ a.site-logo {
   position: relative;
 }
 
-.dropdown::after {
+.dropdown>a::after {
   content: url('../image/icon/dropdown-arrow.svg');
+  margin-left: 8px;
 }
 
 .dropdown-menu {
@@ -726,10 +733,27 @@ a.site-logo {
   flex-direction: column;
   gap: 8px;
   border-radius: 0 0 10px 10px;
+  z-index: 1;
 }
-
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu{
   display: flex;
+}
+@media (max-width:992px) {
+  .dropdown{
+    display: block;
+  }
+  .dropdown-menu{
+    position: static;
+    transform: none;
+    width: 100%;
+    aspect-ratio: 1;
+    display: none;
+  }
+  .dropdown-menu a{
+    width: 100%;
+    display: block;
+    padding: 6px 0!important;
+  }
 }
 
 /*========= dropdown menu end =========*/

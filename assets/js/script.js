@@ -81,6 +81,8 @@ function navLinkClick() {
   }
 }
 
+
+
 /////////// vetical tabs start ///////////////
 
 // Select all tab buttons and content
