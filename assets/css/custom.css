@@ -386,6 +386,7 @@ ul li::before {
     padding: 16px 24px;
   }
 }
+
 @media (min-width:992px) {
   .button {
     font-size: 14px;
@@ -735,24 +736,28 @@ a.site-logo {
   border-radius: 0 0 10px 10px;
   z-index: 1;
 }
-.dropdown:hover .dropdown-menu{
+
+.dropdown:hover .dropdown-menu {
   display: flex;
 }
+
 @media (max-width:992px) {
-  .dropdown{
+  .dropdown {
     display: block;
   }
-  .dropdown-menu{
+
+  .dropdown-menu {
     position: static;
     transform: none;
     width: 100%;
     aspect-ratio: 1;
     display: none;
   }
-  .dropdown-menu a{
+
+  .dropdown-menu a {
     width: 100%;
     display: block;
-    padding: 6px 0!important;
+    padding: 6px 0 !important;
   }
 }
 
@@ -808,6 +813,92 @@ a.site-logo {
 }
 
 /*>>>>>>>>> highlights-sec end <<<<<<<<<*/
+
+/*>>>>>>>>> overview sec start <<<<<<<<*/
+.service-description .schedule-free-call .item {
+  height: auto;
+  background: var(--gradient-primary);
+  padding: 16px;
+  position: relative;
+}
+
+@media (min-width:992px) {
+  .service-description .schedule-free-call .item {
+    padding: 24px 48px;
+  }
+}
+
+@media (min-width:992px) {
+  .service-description .schedule-free-call .item {
+    height: 356px;
+  }
+}
+
+.service-description .schedule-free-call .item form {
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width:992px) {
+  .service-description .schedule-free-call .item form {
+    width: 450px;
+  }
+}
+
+@media (min-width:1200px) {
+  .service-description .schedule-free-call .item form {
+    width: 532px;
+  }
+}
+
+.service-description .schedule-free-call .item form .d-flex * {
+  width: 100%;
+}
+
+.service-description .schedule-free-call .item .left-image {
+  position: absolute;
+  left: 48px;
+  display: none;
+  bottom: 0;
+}
+
+@media (min-width:992px) {
+  .service-description .schedule-free-call .item .left-image {
+    display: block;
+    left: 0;
+  }
+}
+
+@media (min-width:1200px) {
+  .service-description .schedule-free-call .item .left-image {
+    display: block;
+    left: 48px;
+  }
+}
+
+.service-description .schedule-free-call .item .right-image {
+  position: absolute;
+  right: 48px;
+  display: none;
+  bottom: 0;
+}
+
+@media (min-width:992px) {
+  .service-description .schedule-free-call .item .right-image {
+    display: block;
+    right: 0;
+  }
+}
+
+@media (min-width:1200px) {
+  .service-description .schedule-free-call .item .right-image {
+    display: block;
+    right: 48px;
+  }
+}
+
+/*>>>>>>>>> overview sec end <<<<<<<*/
+
 /*>>>>>>>> service-sec start <<<<<<<<<*/
 
 .vertical-tab-button {
@@ -963,13 +1054,32 @@ a.site-logo {
 
 /*>>>>>>> cta-sec start <<<<<<<<<*/
 .cta-sec .col-12 {
-  background: var(--gradient-primary);
+  background: radial-gradient(51.2% 49.89% at 51.2% 0%, var(--red) 0%, var(--dark) 100%);
+  height: auto;
+  position: relative;
 }
 
-@media (max-width:768px) {
+@media (min-width:992px) {
   .cta-sec .col-12 {
-    background: radial-gradient(51.2% 49.89% at 51.2% 0%, var(--red) 0%, var(--dark) 100%);
+    background: var(--gradient-primary);
+    height: 304px;
   }
+}
+
+.cta-sec .col-12 img{
+  position: absolute;
+  bottom: 0;
+}
+.cta-sec .col-12 img.left-image{
+  left: 0;
+}
+@media (min-width:992px) {
+  .cta-sec .col-12 img.left-image{
+    left: 48px;
+  } 
+}
+.cta-sec .col-12 img.right-image{
+  right: 48px;
 }
 
 /*>>>>>>> cta-sec end <<<<<<<<*/
@@ -1022,11 +1132,20 @@ textarea {
   background: var(--white);
   color: var(--disable-grey);
   font-family: var(--Nunito);
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 12px;
+  padding: 12px 8px;
+}
+
+@media (min-width:768px) {
+
+  input,
+  textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
 }
 
 input::placeholder,

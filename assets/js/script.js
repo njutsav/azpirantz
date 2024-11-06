@@ -1,25 +1,22 @@
 // swiper js cleint slider start
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
+const related_service = new Swiper('.related-service', {
+  slidesPerView: 1,
   spaceBetween: 24,
-  loop: true,
-  autoplay: {
-    delay: 2500, // Adjust delay as needed
-    disableOnInteraction: false,
+  loop: false,
+  pagination: {
+    el: ".related-service .swiper-pagination",
+    clickable: true,
   },
-  speed: 500,
+  navigation: {
+    nextEl: ".related-service .swiper-button-next",
+    prevEl: ".related-service .swiper-button-prev",
+  },
   breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
     768: {
-      slidesPerView: 4,
-      spaceBetween: 40,
+      slidesPerView: 2
     },
     1200: {
-      slidesPerView: 9,
-      spaceBetween: 50,
+      slidesPerView: 3
     },
   },
 });

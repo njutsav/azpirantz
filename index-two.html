@@ -1,252 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-         @import url('https://fonts.googleapis.com/css?family=Roboto');
-body{
-    margin: 0;
-     padding: 0;
-     font-family: 'Roboto', sans-serif;
-}
- .navigation {
-     height: 55px;
-     background: linear-gradient(45deg, #4199fe, #74b4fe);
-}
- .brand {
-     position: absolute;
-     padding-left: 20px;
-     float: left;
-     line-height: 55px;
-     text-transform: uppercase;
-     font-size: 1.4em;
-}
- .brand a, .brand a:visited {
-     color: #ffffff;
-     text-decoration: none;
-}
- .nav-container {
-     max-width: 1000px;
-     margin: 0 auto;
-}
- nav {
-     float: right;
-}
- nav ul {
-     list-style: none;
-     margin: 0;
-     padding: 0;
-}
- nav ul li {
-     float: left;
-     position: relative;
-}
- nav ul li a,nav ul li a:visited {
-     display: block;
-     padding: 0 20px;
-     line-height: 55px;
-     color: #fff;
-     background: #262626 ;
-     text-decoration: none;
-}
- nav ul li a{
-     background: transparent;
-     color: #FFF;
-}
- nav ul li a:hover, nav ul li a:visited:hover {
-     background: #2581DC;
-     color: #ffffff;
-}
- .navbar-dropdown li a{
-     background: #2581DC;
-}
- nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after {
-     padding-left: 4px;
-     content: ' \025BE';
-}
- nav ul li ul li {
-     min-width: 190px;
-}
- nav ul li ul li a {
-     padding: 15px;
-     line-height: 20px;
-}
- .navbar-dropdown {
-     position: absolute;
-     display: none;
-     z-index: 1;
-     background: #fff;
-     box-shadow: 0 0 35px 0 rgba(0,0,0,0.25);
-}
-/* Mobile navigation */
- .nav-mobile {
-     display: none;
-     position: absolute;
-     top: 0;
-     right: 0;
-     background: transparent;
-     height: 55px;
-     width: 70px;
-}
- @media only screen and (max-width: 800px) {
-     .nav-mobile {
-         display: block;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .get-started-section {
+      background: linear-gradient(to right, #3f0101, #b71e1e);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+      position: relative;
     }
-     nav {
-         width: 100%;
-         padding: 55px 0 15px;
+    .get-started-section h2 {
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
-     nav ul {
-         display: none;
+    .get-started-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
-     nav ul li {
-         float: none;
+    .get-started-section .btn-book-call {
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
     }
-     nav ul li a {
-         padding: 15px;
-         line-height: 20px;
-         background: #262626;
+    .get-started-section .btn-book-call:hover {
+      background: linear-gradient(to right, #ee0979, #ff6a00);
     }
-     nav ul li ul li a {
-         padding-left: 30px;
+    .get-started-section .img-shield {
+      width: 80px;
+      position: absolute;
+      right: 2rem;
+      bottom: 1rem;
     }
-     .navbar-dropdown {
-         position: static;
-}
- @media screen and (min-width:800px) {
-     .nav-list {
-         display: block !important;
+    .get-started-section .img-person {
+      width: 100px;
+      position: absolute;
+      left: 2rem;
+      bottom: 1rem;
     }
-}
- #navbar-toggle {
-     position: absolute;
-     left: 18px;
-     top: 15px;
-     cursor: pointer;
-     padding: 10px 35px 16px 0px;
-}
- #navbar-toggle span, #navbar-toggle span:before, #navbar-toggle span:after {
-     cursor: pointer;
-     border-radius: 1px;
-     height: 3px;
-     width: 30px;
-     background: #ffffff;
-     position: absolute;
-     display: block;
-     content: '';
-     transition: all 300ms ease-in-out;
-}
- #navbar-toggle span:before {
-     top: -10px;
-}
- #navbar-toggle span:after {
-     bottom: -10px;
-}
- #navbar-toggle.active span {
-     background-color: transparent;
-}
- #navbar-toggle.active span:before, #navbar-toggle.active span:after {
-     top: 0;
-}
- #navbar-toggle.active span:before {
-     transform: rotate(45deg);
-}
- #navbar-toggle.active span:after {
-     transform: rotate(-45deg);
-}
- 
-    </style>
+  </style>
 </head>
 <body>
-    <section class="navigation">
-        <div class="nav-container">
-          <div class="brand">
-            <a href="#!">Logo</a>
-          </div>
-          <nav>
-            <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
-            <ul class="nav-list">
-              <li>
-                <a href="#!">Home</a>
-              </li>
-              <li>
-                <a href="#!">About</a>
-              </li>
-              <li>
-                <a href="#!">Services</a>
-                <ul class="navbar-dropdown">
-                  <li>
-                    <a href="#!">Sass</a>
-                  </li>
-                  <li>
-                    <a href="#!">Less</a>
-                  </li>
-                  <li>
-                    <a href="#!">Stylus</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#!">Portfolio</a>
-              </li>
-              <li>
-                <a href="#!">Category</a>
-                <ul class="navbar-dropdown">
-                  <li>
-                    <a href="#!">Sass</a>
-                  </li>
-                  <li>
-                    <a href="#!">Less</a>
-                  </li>
-                  <li>
-                    <a href="#!">Stylus</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#!">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
+
+<div class="container my-5">
+  <div class="get-started-section">
+    <img src="assets/image/cta/person.png" alt="Person" class="img-person">
+    <h2>Ready To Get Started? We're Here To Help</h2>
+    <p>Get in touch with us to get more details, request a demo or ask for a customized solution tailored to your organization's needs.</p>
+    <a href="#" class="btn btn-book-call">BOOK A FREE CALL <span>→</span></a>
+    <img src="assets/image/cta/shield.png" alt="Shield" class="img-shield">
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script>
-    // Toggle the mobile navigation menu
-document.getElementById('navbar-toggle').addEventListener('click', function() {
-  this.classList.toggle('active');
-  const navList = document.querySelector('.nav-list');
-  if (navList.style.display === 'block') {
-    navList.style.display = 'none';
-  } else {
-    navList.style.display = 'block';
-  }
-});
-
-// Handle dropdown menus within the navigation
-document.querySelectorAll('.nav-list li a:not(:only-child)').forEach(function(element) {
-  element.addEventListener('click', function(e) {
-    const dropdown = this.nextElementSibling;
-    if (dropdown && dropdown.classList.contains('navbar-dropdown')) {
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-      document.querySelectorAll('.navbar-dropdown').forEach(function(otherDropdown) {
-        if (otherDropdown !== dropdown) {
-          otherDropdown.style.display = 'none';
-        }
-      });
-      e.stopPropagation();
-    }
-  });
-});
-
-// Close any open dropdowns if clicking outside
-document.addEventListener('click', function() {
-  document.querySelectorAll('.navbar-dropdown').forEach(function(dropdown) {
-    dropdown.style.display = 'none';
-  });
-});
-
-    </script>
 </html>
